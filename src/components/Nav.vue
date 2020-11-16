@@ -39,8 +39,8 @@
           </router-link>
           <div class="m-item right item m-mobile-hide">
             <div class="ui icon inverted transparent input">
-              <input type="text" placeholder="Search" />
-              <i class="search link icon"></i>
+              <input type="text" placeholder="Search" v-model="keyWord" @keyup.enter="search(keyWord)"/>
+              <i class="search link icon" @click="search(keyWord)"></i>
             </div>
           </div>
         </div>
@@ -99,8 +99,8 @@
         </router-link>
         <div class="m-item right item" style="padding:20px">
           <div class="ui icon inverted transparent input">
-            <input type="text" placeholder="Search" />
-            <i class="search link icon"></i>
+            <input type="text" placeholder="Search..." v-model="keyWord" @keyup.enter="search(keyWord)"/>
+            <i class="search link icon" @click="search(keyWord)"></i>
           </div>
         </div>
       </div>
@@ -114,12 +114,18 @@ export default {
   props: ["activeItem"],
   data() {
     return {
-      drawerVisible: false
+      drawerVisible: false,
+      keyWord:''
     };
   },
   methods: {
     handleClick() {
       this.drawerVisible = true;
+    },
+    search(keyWord){
+      // console.log(keyWord);
+      window.sessionStorage.setItem('keyWord',keyWord)
+      this.$router.push({path:'/search'})
     }
   }
 };
