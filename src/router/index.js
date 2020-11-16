@@ -17,10 +17,7 @@ export default new Router({
     {
       path: '/blog/:id',
       name: 'blog',
-      component: () => import('../views/blog'),
-      // meta:{
-      //   title:'博客详情'
-      // }
+      component: () => import('../views/blog')
     },
     {
       path: '/types',
