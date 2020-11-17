@@ -2,8 +2,8 @@ import axios from 'axios'
 import { Message } from 'element-ui'
 
 const service = axios.create({
-    // baseURL:'https://www.kindless.top:8443/',
-    baseURL:'http://localhost:8080/',
+    baseURL:'https://www.kindless.top:8443/',
+    // baseURL:'http://localhost:8080/',
     timeout:5000,
     withCredentials:true
 })

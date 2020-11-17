@@ -99,6 +99,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: 300 !important;
   letter-spacing: 1px !important;
   line-height: 1.8;
+  word-break: break-all;
 }
 
 .m-text-thin {
